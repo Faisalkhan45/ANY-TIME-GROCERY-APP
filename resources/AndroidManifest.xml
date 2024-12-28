@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" android:compileSdkVersion="33" android:compileSdkVersionCodename="13" package="com.example.anttimegrocery" platformBuildVersionCode="33" platformBuildVersionName="13">
+    <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="33"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:mimeType="*/*" android:scheme="*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:mimeType="*/*" android:scheme="upi" android:host="pay"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+    </queries>
+    <uses-feature android:glEsVersion="20000" android:required="true"/>
+    <application android:theme="@style/Theme.AntTimeGrocery" android:label="Ant Time Grocery" android:icon="@mipmap/ic_launcher" android:debuggable="true" android:allowBackup="true" android:supportsRtl="true" android:extractNativeLibs="false" android:roundIcon="@mipmap/ic_launcher_round" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <activity android:name="com.example.anttimegrocery.activities.PaymentActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.AddAddressActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.AddressActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.CartActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.ShowAllActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.DetailedActivity" android:exported="false">
+            <meta-data android:name="android.app.lib_name" android:value=""/>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.OnBoardingActivity" android:exported="true"/>
+        <activity android:name="com.example.anttimegrocery.activities.RegistrationActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.anttimegrocery.activities.LoginActivity"/>
+        <activity android:name="com.example.anttimegrocery.activities.MainActivity"/>
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+        <meta-data android:name="com.razorpay.Apikey" android:value="rzp_test_ouqaHXfpYGPmEd"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.firebase.auth.internal.GenericIdpActivity" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="genericidp" android:host="firebase.auth" android:path="/"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.firebase.auth.internal.RecaptchaActivity" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="recaptcha" android:host="firebase.auth" android:path="/"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:name="com.razorpay.RzpTokenReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="rzp.device_token.share"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/CheckoutTheme" android:name="com.razorpay.CheckoutActivity" android:exported="true" android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <data android:scheme="io.rzp" android:host="rzp.io"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.razorpay.plugin.googlepay_all" android:value="com.razorpay.RzpGpayMerged"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+        <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.example.anttimegrocery.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.example.anttimegrocery.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+        </provider>
+        <provider android:name="com.squareup.picasso.PicassoProvider" android:exported="false" android:authorities="com.example.anttimegrocery.com.squareup.picasso"/>
+    </application>
+</manifest>

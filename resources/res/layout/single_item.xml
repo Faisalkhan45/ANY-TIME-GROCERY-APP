@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:weightSum="5">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="4" android:layout_marginStart="10dp">
+        <TextView android:textSize="16sp" android:textStyle="bold" android:textColor="#000000" android:id="@+id/tv_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="Something"/>
+        <TextView android:textSize="14sp" android:textColor="#000000" android:id="@+id/tv_sub_item" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="Something"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/iv_check_mark" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_margin="5dp" android:src="@drawable/ic_tick_mark" android:layout_weight="1"/>
+</LinearLayout>

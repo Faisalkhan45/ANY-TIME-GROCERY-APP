@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/rzp_theMainMagicView" android:background="#333333" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/rzp_outerbox" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginTop="100dp" android:layout_marginRight="20dp">
+        <LinearLayout android:orientation="vertical" android:id="@+id/rzp_innerbox" android:layout_width="match_parent" android:layout_height="255dp"/>
+        <ImageView android:textSize="12sp" android:textStyle="italic" android:textColor="#a1ddee" android:id="@+id/rzp_securedpayments" android:background="@drawable/rzp_poweredby" android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingRight="20dp" android:paddingBottom="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</RelativeLayout>

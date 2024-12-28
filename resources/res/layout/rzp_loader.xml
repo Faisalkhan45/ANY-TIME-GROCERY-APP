@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@+id/ll_loader" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <FrameLayout android:layout_gravity="center_horizontal" android:background="@drawable/rzp_loader_circle" android:clickable="false" android:layout_width="56dp" android:layout_height="56dp">
+        <com.razorpay.CircularProgressView android:layout_gravity="center" android:id="@+id/progressBar" android:layout_width="59dp" android:layout_height="59dp"/>
+        <ImageView android:layout_gravity="center" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/rzp_logo"/>
+    </FrameLayout>
+    <TextView android:textStyle="bold" android:textColor="#fff" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15dp" android:text="Loading" android:textAllCaps="true"/>
+</LinearLayout>
